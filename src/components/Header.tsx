@@ -3,7 +3,6 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Drawer from '@mui/material/Drawer';
-
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -30,7 +29,7 @@ interface Props {
 const navItems = [
     {
       name: 'Sobre',     
-      href: '#sobre'
+      href: 'home'
     },
     {
       name: 'Personagens',
@@ -42,7 +41,7 @@ const navItems = [
     },
     {
         name: 'Akatsuki',
-        href: '#akatsuki'
+        href: 'akatsuki'
     }
   ];
 
