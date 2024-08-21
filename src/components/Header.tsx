@@ -13,6 +13,7 @@ import { useTheme } from '@mui/material'
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { useAppThemeContext } from '../contexts/'
+import logo from '../assets/logo-naruto-1.png'
 
 interface Props {
     /**
@@ -74,22 +75,26 @@ export const Header = (props: Props) => {
   
     const container = window !== undefined ? () => window().document.body : undefined;
 
+    console.log("logo", logo)
     return (
-        <Box sx={{ display: 'flex' }} >
+        <Box sx={{ display: 'flex', height: '69px' }} >
             <CssBaseline />
             <AppBar sx={{ boxShadow: 'none', color: 'text.primary'}}>
-                <Toolbar>
-                    <Box sx={{ display: { xs: 'none', sm: 'block' }}}>
+                <Toolbar sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
+                    <Box>
+                      <img src={logo}  alt='logo' width='100%' height='100%' />
+                    </Box>
+                    <Box sx={{ display: { xs: 'none', sm: 'flex', md: 'flex' }}}>
                         {navItems.map((item) => (
                           <Button variant="outlined" key={item.name}  sx={{ fontSize: '18px', lineHeight: 'normal', margin: '0 10px', border: 'none', color:'text.primary' }} href={item.href}>
                               {item.name}
                           </Button>
                         ))}
                     </Box>
-                    <Box>
-                      {theme.palette.mode} mode
+                    <Box sx={{ display: { xs: 'none', sm: 'flex', md: 'flex' }}}>
+                      <span>{theme.palette.mode} mode</span>
                       <IconButton sx={{ ml: 1 }} onClick={toggleTheme} color="inherit">
-                        {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+                        {theme.palette.mode === 'light' ? <Brightness4Icon /> : <Brightness7Icon /> }
                       </IconButton>
                     </Box>
                 </Toolbar>
