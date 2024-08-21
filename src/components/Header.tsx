@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -13,7 +13,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material'
-
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import { useAppThemeContext } from '../contexts/'
 
 interface Props {
     /**
@@ -48,7 +50,9 @@ export const Header = (props: Props) => {
 
     const theme = useTheme();
   
+    const { themeName, toggleTheme } = useAppThemeContext();
     console.log("theme", theme)
+    console.log("themeName", themeName)
     const handleDrawerToggle = () => {
       setMobileOpen((prevState) => !prevState);
     };
@@ -76,16 +80,22 @@ export const Header = (props: Props) => {
   
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex' }} >
             <CssBaseline />
-            <AppBar sx={{ boxShadow: 'none'}}>
+            <AppBar sx={{ boxShadow: 'none', color: 'text.primary'}}>
                 <Toolbar>
                     <Box sx={{ display: { xs: 'none', sm: 'block' }}}>
                         {navItems.map((item) => (
-                          <Button variant="outlined" key={item.name} sx={{ fontSize: '18px', color: 'secondary.main', lineHeight: 'normal', margin: '0 10px', border: 'none' }} href={item.href}>
+                          <Button variant="outlined" key={item.name}  sx={{ fontSize: '18px', lineHeight: 'normal', margin: '0 10px', border: 'none', color:'text.primary' }} href={item.href}>
                               {item.name}
                           </Button>
                         ))}
+                    </Box>
+                    <Box>
+                      {theme.palette.mode} mode
+                      <IconButton sx={{ ml: 1 }} onClick={toggleTheme} color="inherit">
+                        {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+                      </IconButton>
                     </Box>
                 </Toolbar>
             </AppBar>

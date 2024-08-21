@@ -6,7 +6,7 @@ export const getTheme = (mode: PaletteMode ) => ({
         mode,
         ...(mode === 'light' ? {
             primary: {
-                main: '#FF4500',
+                main: '#f5f5f5',
             },
             secondary: {
                 main: '#f2a30b',
@@ -18,19 +18,17 @@ export const getTheme = (mode: PaletteMode ) => ({
                 primary: '#FF4500',
             },
         } : {
-            palette: {
-                primary: {
-                    main: '#f2a30b',
-                },
-                secondary: {
-                    main: '#FF4500',
-                },
-                background: {
-                    default: '#0b0b0b',
-                },
-                text: {
-                    primary: '#f2a30b',
-                }
+            primary: {
+                main: '#121212',
+            },
+            secondary: {
+                main: '#FF4500',
+            },
+            background: {
+                default: '#0b0b0b',
+            },
+            text: {
+                primary: '#f2a30b',
             },
         }),
 
