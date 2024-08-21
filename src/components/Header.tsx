@@ -88,8 +88,8 @@ export const Header = (props: Props) => {
     return (
         <Box sx={{ display: 'flex' }} >
             <CssBaseline />
-            <AppBar sx={{ boxShadow: 'none', color: 'text.primary'}}>
-                <Toolbar sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
+            <AppBar sx={{ boxShadow: 'none', color: 'text.primary',  position: 'relative', top: 0 }}>
+                <Toolbar sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
                     <Box>
                       <img src={logo}  alt='logo' width='100%' height='100%' />
                     </Box>
