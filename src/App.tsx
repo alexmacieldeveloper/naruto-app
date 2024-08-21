@@ -1,12 +1,12 @@
 import { BrowserRouter } from "react-router-dom";
-import { Home } from './pages'
+import { AppRoutes } from './routes'
 import { AppThemeProvider } from './contexts'
 
 function App() {
   return (
     <AppThemeProvider>
       <BrowserRouter>
-        <Home/>
+        <AppRoutes/>
       </BrowserRouter>
     </AppThemeProvider>
   );
