@@ -1,16 +1,13 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material'
 import Brightness4Icon from '@mui/icons-material/Brightness4';
@@ -50,9 +47,8 @@ export const Header = (props: Props) => {
 
     const theme = useTheme();
   
-    const { themeName, toggleTheme } = useAppThemeContext();
-    console.log("theme", theme)
-    console.log("themeName", themeName)
+    const { toggleTheme } = useAppThemeContext();
+
     const handleDrawerToggle = () => {
       setMobileOpen((prevState) => !prevState);
     };
@@ -77,7 +73,6 @@ export const Header = (props: Props) => {
     );
   
     const container = window !== undefined ? () => window().document.body : undefined;
-  
 
     return (
         <Box sx={{ display: 'flex' }} >

@@ -1,5 +1,5 @@
 import { createContext, useState, useCallback, useMemo, useContext } from 'react'
-import { ThemeProvider, Box, PaletteMode, createTheme } from '@mui/material'
+import { ThemeProvider, PaletteMode, createTheme } from '@mui/material'
 import { getTheme } from './../themes'
 
 interface IThemeContextData {
