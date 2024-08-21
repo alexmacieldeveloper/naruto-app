@@ -48,6 +48,7 @@ export const Header = (props: Props) => {
 
     const theme = useTheme();
   
+    console.log("theme", theme)
     const handleDrawerToggle = () => {
       setMobileOpen((prevState) => !prevState);
     };
@@ -77,16 +78,11 @@ export const Header = (props: Props) => {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar sx={{ boxShadow: 'none'}} color='primary'>
+            <AppBar sx={{ boxShadow: 'none'}}>
                 <Toolbar>
-                    <Box sx={{ display: { xs: 'none', sm: 'block' }}} bgcolor={theme.palette.background.default}>
+                    <Box sx={{ display: { xs: 'none', sm: 'block' }}}>
                         {navItems.map((item) => (
-                          <Button variant="outlined" key={item.name} sx={{ fontSize: '18px', color: '#FDFDFD', lineHeight: 'normal', margin: '0 10px', border: 'none',
-                              ":hover": {
-                                  backgroundColor: 'rgb(246, 126, 60)',
-                                  border: '1px solid rgb(246, 126, 60)'
-                              }
-                          }} href={item.href}>
+                          <Button variant="outlined" key={item.name} sx={{ fontSize: '18px', color: 'secondary.main', lineHeight: 'normal', margin: '0 10px', border: 'none' }} href={item.href}>
                               {item.name}
                           </Button>
                         ))}
