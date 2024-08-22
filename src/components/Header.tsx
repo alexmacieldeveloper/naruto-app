@@ -29,7 +29,7 @@ interface Props {
 const navItems = [
     {
       name: 'Sobre',     
-      href: 'home'
+      href: '/'
     },
     {
       name: 'Personagens',
@@ -41,7 +41,7 @@ const navItems = [
     },
     {
         name: 'Akatsuki',
-        href: 'akatsuki'
+        href: '/akatsuki'
     }
   ];
 
