@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "https://narutodb.xyz/api/",
+  baseURL: "https://dattebayo-api.onrender.com/",
 });
 
